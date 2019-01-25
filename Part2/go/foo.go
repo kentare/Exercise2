@@ -23,6 +23,7 @@ func number_server(add_number <-chan int, control <-chan int, number chan<- int)
 			i += num
 		case <-control:
 			number <- i
+			return
 			// TODO: receive different messages and handle them correctly
 			// You will at least need to update the number and handle control signals.
 		}
@@ -61,7 +62,6 @@ func main() {
 	<-finished
 
 	// TODO: block on finished from both "worker" goroutines
-
 	control <- GetNumber
 	Println("The magic number is:", <-number)
 	control <- Exit

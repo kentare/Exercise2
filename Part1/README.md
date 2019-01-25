@@ -2,6 +2,8 @@
 
 ### What is an atomic operation?
 >  An atomic operation an operation inside the processor so it can simultanously read and write to the same memory location on the same bus. This prevents other processes or i/o devices to write to the same memory at the same time.
+
+
 ### What is a semaphore?
 > A semaphore is a tool to prevent race conditions.
 
@@ -11,7 +13,6 @@ There are two types of semaphore: Counting semaphore (as the one mentioned above
 
 ### What is a mutex?
 > A Mutex (Mutual Exclusion) is a tool for preventing race conditions.
-
 > A mutex has ownership over a resource, prevents that two threads do not access the same resource at the same time.
 
 ### What is the difference between a mutex and a binary semaphore?
@@ -26,7 +27,8 @@ There are two types of semaphore: Counting semaphore (as the one mentioned above
  > Data races are a specific form for race condition where two or more threads in a single process access the same memory location concurrently. One of the threads must be writing and the threads are not using mutex to access the resource.
 
 ### List some advantages of using message passing over lock-based synchronization primitives.
-> *Your answer here*
+> Easier to wrap your head around when the program gets more complex, conceptually easier. It is harder to mess thing up.
+
 
 ### List some advantages of using lock-based synchronization primitives over message passing.
-> *Your answer here*
+> When you need to access the same variable directly.
